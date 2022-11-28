@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script type="importmap">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script type="importmap">
       {
         "imports": {
           "three": "https://unpkg.com/three@0.138.0/build/three.module.js",
@@ -13,31 +14,36 @@
         }
       }
     </script>
-    <script src="src/js/process.js" type="module" async>
-    </script>
-  </head>
-  <body>
-    <div class="container">
-      <div>
-        <canvas id="myCanvas"></canvas>
-      </div>
-      <div>
-        list action
-        <button id="hello" onclick="updatePosition()">move</button>
-      </div>
+  <script src="src/js/process.js" type="module" async>
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div>
+      <canvas id="myCanvas"></canvas>
     </div>
-  </body>
-  <style>
-    body {
-      display: flex;
-      flex-direction: column-reverse;
-    }
-    .container {
-      display: flex;
-    }
-    #myCanvas {
-      width: 600px;
-      height: 400px;
-    }
-  </style>
+    <div>
+      list action
+      <button id="hello" onclick="updatePosition()">move</button>
+    </div>
+  </div>
+</body>
+<style>
+  body {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .container {
+    display: flex;
+  }
+
+  #myCanvas {
+    width: 1070px;
+    height: 602px;
+    cursor: auto;
+  }
+</style>
+
 </html>

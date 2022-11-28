@@ -9,14 +9,14 @@ let scene = new THREE.Scene();
 let renderer = new THREE.WebGLRenderer({ antialias: true, canvas: canvas });
 renderer.setSize(canvas.clientWidth, canvas.clientHeight);
 document.body.appendChild(renderer.domElement);
-const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth/canvas.clientHeight, 0.1, 1000);
 
 // data
 let txtSub = "AN";
 let timeVideo = 0;
 
 let image = renderImage("src/resource/hinh1.jpg");
-let video = renderVideo("src/resource/video2.mp4", timeVideo, false);
+let video = renderVideo("src/resource/video3.mp4", timeVideo, false);
 let imageTxt = renderImageTxt(txtSub);
 
 image.name = "myImage";
@@ -45,10 +45,10 @@ var idFrame;
 
 function animate() {
   timer++;
-  if (timer == 200) {
-    console.log(timer);
+  if (timer == 100) {
+    console.log(video);
     var selectedObject = scene.getObjectByName("myImage");
-    // scene.remove(selectedObject);
+    scene.remove(selectedObject);
     // console.log(scene);
     // console.log(video);
     // console.log(image);
@@ -68,10 +68,10 @@ export default function updatePosition() {
     scene.remove(scene.children[0]);
   }
   let image = renderImage("src/resource/hinh1.jpg");
-  let video = renderVideo("src/resource/video2.mp4", 0, true);
+  let video = renderVideo("src/resource/video3.mp4", 300, true);
   let imageTxt = renderImageTxt(txtSub);
   scene.add(video);
-  scene.add(image);
+  // scene.add(image);
   scene.add(imageTxt);
 
   animate();
